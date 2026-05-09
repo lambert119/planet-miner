@@ -1,0 +1,119 @@
+.inventory-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  color: white;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  pointer-events: none;
+}
+
+.inventory-button {
+  pointer-events: all;
+  opacity: 1;
+  background: rgba(100, 100, 100, 0.2);
+  position: absolute;
+  border: 1px solid gray;
+  border-radius: 5px;
+  color: white;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  transition: all 0.2s ease;
+}
+
+.inventory-button.hidden {
+  pointer-events: none;
+  transform: translate(-50%, -200%) scale(0.5);
+  opacity: 0;
+}
+
+.inventory-button button {
+  color: white;
+  margin: 0;
+  padding: 5px;
+  border: 1px solid rgba(100, 100, 100, 0.45);
+  border-radius: 5px;
+  transform: translateY(0) scale(1);
+  transition: all 0.3s ease;
+}
+
+.inventory-button button:hover {
+  color: whitesmoke;
+  background: rgba(100, 100, 100, 1);
+  border: 1px solid gray;
+  transform: translateY(-4px) scale(0.99);
+}
+
+.inventory-button button:active {
+  background: rgba(100, 100, 100, 0.6);
+  transform: translateY(0) scale(1);
+}
+
+.inventory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 30%) scale(0.01);
+
+  background: rgba(100, 100, 100, 0.45);
+  border: 1px solid gray;
+  border-radius: 15px;
+
+  min-width: 350px;
+  min-height: 500px;
+  max-width: 1200px;
+  max-height: 1500px;
+
+  pointer-events: none;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+
+  overflow: hidden;
+}
+
+.inventory.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.inventory-header {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 0 15px;
+}
+
+.inventory-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  border-bottom: 1px solid gray;
+}
+
+.item:last-child {
+  border-bottom: none;
+}

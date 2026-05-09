@@ -1,0 +1,229 @@
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+  
+}
+
+h1 {
+  color:white;
+}
+
+.world-menu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+
+  color:white;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 1000;
+}
+
+.world-menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  min-width: 390px;
+  min-height: 400px;
+  max-width: 500px;
+  max-height: 600px;
+  padding: 10px;
+  gap: 30px;
+
+  border-radius: 15px;
+  background: rgba(100, 100, 100, 0.1);
+  border: 1px solid gray;
+  overflow-y: visible;
+
+  transition: all 1s ease;
+}
+
+.worlds-array {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  gap: 5px;
+}
+
+.worlds-array::-webkit-scrollbar {
+  width: 6px;
+}
+
+.worlds-array::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 999px;
+  margin: 16px 0;
+}
+
+.worlds-array::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.55),
+    rgba(120, 140, 255, 0.35)
+  );
+  border-radius: 999px;
+}
+
+.worlds-array::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.world-item {
+  background: rgba(100, 100, 100, 0.1);
+  border: 1px solid gray;
+  border-radius: 15px;
+
+  display: flex;
+  margin: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  transition: all 0.2s ease;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.world-item:hover {
+  background: rgba(100, 100, 100, 0.45);
+}
+
+.world-item button {
+  display: flex;
+  flex-direction: column;
+}
+
+.world-item h2 {
+  padding: 10px 0;
+  margin: 0;
+  border-bottom: 1px solid gray;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  width: 200px; /* 🔥 ОБЯЗАТЕЛЬНО */
+}
+
+
+.item-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-world-button {
+  align-self: center;
+  color: gray;
+  border-radius: 15px;
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom: 5px;
+  transition: all 0.2s ease;
+}
+
+.delete-world-button:hover {
+  color: whitesmoke;
+  background: rgba(100, 100, 100, 0.45);
+}
+
+.create-world-button {
+  align-self: center;
+  color: gray;
+  border-radius: 15px;
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom: 5px;
+  transition: all 0.2s ease;
+}
+
+.create-world-button:hover {
+  color: whitesmoke;
+  background: rgba(100, 100, 100, 0.45);
+}
+
+.create-world-menu {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 400px;
+}
+
+.input-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+
+.input-wrapper input {
+  width: 100%;
+  padding: 16px 16px;
+  font-size: 16px;
+  color: white;
+  letter-spacing: 2px;
+
+  border: 1px solid gray;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.input-wrapper input:focus {
+  border-color: white;
+}
+
+.input-wrapper label {
+  position: absolute;
+  left: 15px;
+  font-size: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.input-wrapper input:focus + label,
+.input-wrapper input:not(:placeholder-shown) + label {
+  top: -12px;
+  font-size: 12px;
+  color: white;
+}
+
+.create-world-menu button {
+  align-self: center;
+  color: white;
+  background: rgba(100, 100, 100, 0.45);
+  border-radius: 15px;
+  font-size: 18px;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  transition: all 0.2s ease;
+}
+
+.create-world-menu button:hover {
+  color: whitesmoke;
+  background: rgba(100, 100, 100, 0.9);
+}

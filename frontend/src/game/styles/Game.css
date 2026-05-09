@@ -1,0 +1,185 @@
+.game {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: rgba(10, 10, 10);
+}
+
+/* canvas — фон */
+.game canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/* UI слой */
+.statistics {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  position: absolute;
+  background: rgba(100, 100, 100, 0.45);
+  border-radius: 15px;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  color: white;
+  pointer-events: none;
+}
+
+.statistics p {
+  margin: 0 0 15px 0;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.statistics-extra {
+  max-height: 0;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin: 0;
+  transition: max-height 0.4s ease, max-width 1.5s ease, opacity 0.3s ease, margin-bottom 0.4s ease;
+}
+
+.statistics-extra.active {
+  max-height: 500px;
+  max-width: 500px;
+  opacity: 1;
+  margin-bottom: 15px;
+}
+
+.statistics button {
+  pointer-events: all;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.statistics button:hover {
+  color:gray;
+}
+
+.statistics-extra p {
+  opacity: 0;
+  transform: translateY(-10px);
+  white-space: nowrap;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.statistics-extra p:last-child {
+  margin-bottom: 0;
+}
+
+/* когда открыто */
+.statistics-extra.active p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.statistics-extra.active p:nth-child(1) { transition-delay: 0.05s; }
+.statistics-extra.active p:nth-child(2) { transition-delay: 0.1s; }
+.statistics-extra.active p:nth-child(3) { transition-delay: 0.15s; }
+.statistics-extra.active p:nth-child(4) { transition-delay: 0.2s; }
+.statistics-extra.active p:nth-child(5) { transition-delay: 0.25s; }
+.statistics-extra.active p:nth-child(6) { transition-delay: 0.3s; }
+
+.options-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+
+  font-size: 30px;
+  color: white;
+  border-radius: 50%;
+
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.options-button:hover {
+  transform: rotate(90deg) scale(1.1);
+}
+
+.upgrade-menu {
+  display: flex;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: rgba(100, 100, 100, 0.45);
+
+  border: 1px solid gray;
+  border-radius: 5px;
+
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.upgrade-menu button {
+  transition: all 0.3s ease;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(100, 100, 100, 0.45);
+  color: whitesmoke;
+  margin: 0;
+  padding: 5px;
+  transform: translateY(0) scale(1);
+}
+
+.upgrade-menu button:hover {
+  background: rgba(100, 100, 100, 1);
+  transform: translateY(-2px);
+  color:white;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.upgrade-menu button:active {
+  background: rgba(100, 100, 100, 0.8);
+  transform: translateY(0);
+  color: gray;
+}
+
+.upgrade-button {
+  background-color: rgba(100, 100, 100, 0.45);
+
+  border: 1px solid gray;
+  border-radius: 5px;
+
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.upgrade-button button {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(100, 100, 100, 0.45);
+  color: whitesmoke;
+  margin: 0;
+  padding: 5px;
+  transform: translateY(0) scale(1);
+}
+
+.upgrade-button button:hover {
+  background: rgba(100, 100, 100, 1);
+  transform: translateY(-2px);
+  color:white;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.upgrade-button button:active {
+  background: rgba(100, 100, 100, 0.8);
+  transform: translateY(0);
+  color: gray;
+}
